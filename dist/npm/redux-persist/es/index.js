@@ -1,0 +1,53 @@
+"use strict";var exports=module.exports={};
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.storages = exports.purgeStoredState = exports.persistStore = exports.getStoredState = exports.createTransform = exports.createPersistor = exports.autoRehydrate = undefined;
+
+var _autoRehydrate = require('./autoRehydrate.js');
+
+var _autoRehydrate2 = _interopRequireDefault(_autoRehydrate);
+
+var _createPersistor = require('./createPersistor.js');
+
+var _createPersistor2 = _interopRequireDefault(_createPersistor);
+
+var _createTransform = require('./createTransform.js');
+
+var _createTransform2 = _interopRequireDefault(_createTransform);
+
+var _getStoredState = require('./getStoredState.js');
+
+var _getStoredState2 = _interopRequireDefault(_getStoredState);
+
+var _persistStore = require('./persistStore.js');
+
+var _persistStore2 = _interopRequireDefault(_persistStore);
+
+var _purgeStoredState = require('./purgeStoredState.js');
+
+var _purgeStoredState2 = _interopRequireDefault(_purgeStoredState);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// @TODO remove in v5
+var deprecated = function deprecated(cb, cb2, cb3) {
+  console.error('redux-persist: this method of importing storages has been removed. instead use `import { asyncLocalStorage } from "redux-persist/storages"`');
+  if (typeof cb === 'function') cb();
+  if (typeof cb2 === 'function') cb2();
+  if (typeof cb3 === 'function') cb3();
+};
+var deprecatedStorage = { getAllKeys: deprecated, getItem: deprecated, setItem: deprecated, removeItem: deprecated };
+var storages = {
+  asyncLocalStorage: deprecatedStorage,
+  asyncSessionStorage: deprecatedStorage
+};
+
+exports.autoRehydrate = _autoRehydrate2.default;
+exports.createPersistor = _createPersistor2.default;
+exports.createTransform = _createTransform2.default;
+exports.getStoredState = _getStoredState2.default;
+exports.persistStore = _persistStore2.default;
+exports.purgeStoredState = _purgeStoredState2.default;
+exports.storages = storages;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImluZGV4LmpzIl0sIm5hbWVzIjpbImRlcHJlY2F0ZWQiLCJjYiIsImNiMiIsImNiMyIsImNvbnNvbGUiLCJlcnJvciIsImRlcHJlY2F0ZWRTdG9yYWdlIiwiZ2V0QWxsS2V5cyIsImdldEl0ZW0iLCJzZXRJdGVtIiwicmVtb3ZlSXRlbSIsInN0b3JhZ2VzIiwiYXN5bmNMb2NhbFN0b3JhZ2UiLCJhc3luY1Nlc3Npb25TdG9yYWdlIiwiYXV0b1JlaHlkcmF0ZSIsImNyZWF0ZVBlcnNpc3RvciIsImNyZWF0ZVRyYW5zZm9ybSIsImdldFN0b3JlZFN0YXRlIiwicGVyc2lzdFN0b3JlIiwicHVyZ2VTdG9yZWRTdGF0ZSJdLCJtYXBwaW5ncyI6Ijs7Ozs7OztBQUFBOzs7O0FBQ0E7Ozs7QUFDQTs7OztBQUNBOzs7O0FBQ0E7Ozs7QUFDQTs7Ozs7O0FBRUE7QUFDQSxJQUFJQSxhQUFhLFNBQVNBLFVBQVQsQ0FBb0JDLEVBQXBCLEVBQXdCQyxHQUF4QixFQUE2QkMsR0FBN0IsRUFBa0M7QUFDakRDLFVBQVFDLEtBQVIsQ0FBYyw2SUFBZDtBQUNBLE1BQUksT0FBT0osRUFBUCxLQUFjLFVBQWxCLEVBQThCQTtBQUM5QixNQUFJLE9BQU9DLEdBQVAsS0FBZSxVQUFuQixFQUErQkE7QUFDL0IsTUFBSSxPQUFPQyxHQUFQLEtBQWUsVUFBbkIsRUFBK0JBO0FBQ2hDLENBTEQ7QUFNQSxJQUFJRyxvQkFBb0IsRUFBRUMsWUFBWVAsVUFBZCxFQUEwQlEsU0FBU1IsVUFBbkMsRUFBK0NTLFNBQVNULFVBQXhELEVBQW9FVSxZQUFZVixVQUFoRixFQUF4QjtBQUNBLElBQUlXLFdBQVc7QUFDYkMscUJBQW1CTixpQkFETjtBQUViTyx1QkFBcUJQO0FBRlIsQ0FBZjs7UUFLU1EsYTtRQUFlQyxlO1FBQWlCQyxlO1FBQWlCQyxjO1FBQWdCQyxZO1FBQWNDLGdCO1FBQWtCUixRLEdBQUFBLFEiLCJmaWxlIjoidW5rbm93biIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBhdXRvUmVoeWRyYXRlIGZyb20gJy4vYXV0b1JlaHlkcmF0ZSc7XG5pbXBvcnQgY3JlYXRlUGVyc2lzdG9yIGZyb20gJy4vY3JlYXRlUGVyc2lzdG9yJztcbmltcG9ydCBjcmVhdGVUcmFuc2Zvcm0gZnJvbSAnLi9jcmVhdGVUcmFuc2Zvcm0nO1xuaW1wb3J0IGdldFN0b3JlZFN0YXRlIGZyb20gJy4vZ2V0U3RvcmVkU3RhdGUnO1xuaW1wb3J0IHBlcnNpc3RTdG9yZSBmcm9tICcuL3BlcnNpc3RTdG9yZSc7XG5pbXBvcnQgcHVyZ2VTdG9yZWRTdGF0ZSBmcm9tICcuL3B1cmdlU3RvcmVkU3RhdGUnO1xuXG4vLyBAVE9ETyByZW1vdmUgaW4gdjVcbnZhciBkZXByZWNhdGVkID0gZnVuY3Rpb24gZGVwcmVjYXRlZChjYiwgY2IyLCBjYjMpIHtcbiAgY29uc29sZS5lcnJvcigncmVkdXgtcGVyc2lzdDogdGhpcyBtZXRob2Qgb2YgaW1wb3J0aW5nIHN0b3JhZ2VzIGhhcyBiZWVuIHJlbW92ZWQuIGluc3RlYWQgdXNlIGBpbXBvcnQgeyBhc3luY0xvY2FsU3RvcmFnZSB9IGZyb20gXCJyZWR1eC1wZXJzaXN0L3N0b3JhZ2VzXCJgJyk7XG4gIGlmICh0eXBlb2YgY2IgPT09ICdmdW5jdGlvbicpIGNiKCk7XG4gIGlmICh0eXBlb2YgY2IyID09PSAnZnVuY3Rpb24nKSBjYjIoKTtcbiAgaWYgKHR5cGVvZiBjYjMgPT09ICdmdW5jdGlvbicpIGNiMygpO1xufTtcbnZhciBkZXByZWNhdGVkU3RvcmFnZSA9IHsgZ2V0QWxsS2V5czogZGVwcmVjYXRlZCwgZ2V0SXRlbTogZGVwcmVjYXRlZCwgc2V0SXRlbTogZGVwcmVjYXRlZCwgcmVtb3ZlSXRlbTogZGVwcmVjYXRlZCB9O1xudmFyIHN0b3JhZ2VzID0ge1xuICBhc3luY0xvY2FsU3RvcmFnZTogZGVwcmVjYXRlZFN0b3JhZ2UsXG4gIGFzeW5jU2Vzc2lvblN0b3JhZ2U6IGRlcHJlY2F0ZWRTdG9yYWdlXG59O1xuXG5leHBvcnQgeyBhdXRvUmVoeWRyYXRlLCBjcmVhdGVQZXJzaXN0b3IsIGNyZWF0ZVRyYW5zZm9ybSwgZ2V0U3RvcmVkU3RhdGUsIHBlcnNpc3RTdG9yZSwgcHVyZ2VTdG9yZWRTdGF0ZSwgc3RvcmFnZXMgfTsiXX0=

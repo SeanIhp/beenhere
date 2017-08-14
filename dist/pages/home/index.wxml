@@ -1,0 +1,70 @@
+<view class="container">
+
+  <view class="page-body">
+
+    <view class="page-section page-section-spacing swiper">
+        <view class="locationInfo">
+          <image class="locationIcon" src="../../assets/images/location.png"/>
+          <text class="locationText">{{state.locationAddress}}附近</text>
+        </view>
+
+      <block xmlns:wx="" wx:if="{{true}}">
+        <view style="margin-top:120px;">
+             <!-- <list key="bulletList" name="bullet"/>  -->
+
+            <rich-text animation="{{state.loadedBullets[0].ani}}" class="bullet-text" style="top:{{state.loadedBullets[0].baslistic.top}}px;left:{{state.loadedBullets[0].clientWidth}}px;">
+              <span style="color:{{state.loadedBullets[0].color}};font-size:{{state.loadedBullets[0].size}}px">
+                {{state.loadedBullets[0].text}}
+              </span>
+            </rich-text>
+            <rich-text animation="{{state.loadedBullets[1].ani}}" class="bullet-text" style="top:{{state.loadedBullets[1].baslistic.top}}px;left:{{state.loadedBullets[1].clientWidth}}px;">
+              <span style="color:{{state.loadedBullets[1].color}};font-size:{{state.loadedBullets[1].size}}px">
+                {{state.loadedBullets[1].text}}
+              </span>
+            </rich-text>
+            <rich-text animation="{{state.loadedBullets[2].ani}}" class="bullet-text" style="top:{{state.loadedBullets[2].baslistic.top}}px;left:{{state.loadedBullets[2].clientWidth}}px;">
+              <span style="color:{{state.loadedBullets[2].color}};font-size:{{state.loadedBullets[2].size}}px">
+                {{state.loadedBullets[2].text}}
+              </span>
+            </rich-text>
+            <view wx:key="vv" wx:for="{{state.loadedBullets}}">
+              <rich-text animation="{{item.ani}}" class="bullet-text" style="top:{{item.baslistic.top}}px;left:{{item.clientWidth}}px;">
+                <span style="color:{{item.color}};font-size:{{item.size}}px">
+                  {{item.text}}
+                </span>
+              </rich-text>
+            </view>
+
+
+            <!-- <rich-text animation="{{state.bullet0.ani}}" class="bullet-text" style="top:20px;left:{{state.clientWidth}}px;">
+              <span style="color:{{state.bullet0.color}};font-size:{{state.bullet0.size}}px">
+                {{state.bullet0.text}}
+              </span>
+            </rich-text>
+            <rich-text animation="{{state.bullet14.ani}}" class="bullet-text" style="top:300px;left:{{state.clientWidth}}px;">
+              <span style="color:{{state.bullet14.color}};font-size:{{state.bullet14.size}}px">
+                {{state.bullet14.text}}
+              </span>
+            </rich-text> -->
+
+
+
+            </view>
+      </block>
+    </view>
+
+    <view class="page-section" style="margin-top: 330px;margin-bottom: 0;">
+      <view class="weui-flex">
+          <view class="weui-flex__item">
+            <slider value="100" bindchange="_dispatch" min="50" max="500" show-value="{{true}}" data-bindchange="slider4change"/>
+          </view>
+          <view class="weui-flex__item">
+            <button type="default" bindtap="_dispatch" data-bindtap="chooseLocation">
+              relocation
+            </button>
+          </view>
+      </view>
+    </view>
+  </view>
+  
+</view>

@@ -1,0 +1,36 @@
+"use strict";var exports=module.exports={};/*!
+ * is-plain-object <https://github.com/jonschlinkert/is-plain-object>
+ *
+ * Copyright (c) 2014-2017, Jon Schlinkert.
+ * Released under the MIT License.
+ */
+
+
+var isObject = require('../isobject/index.js');
+
+function isObjectObject(o) {
+  return isObject(o) === true && Object.prototype.toString.call(o) === '[object Object]';
+}
+
+module.exports = function isPlainObject(o) {
+  var ctor, prot;
+
+  if (isObjectObject(o) === false) return false;
+
+  // If has modified constructor
+  ctor = o.constructor;
+  if (typeof ctor !== 'function') return false;
+
+  // If has modified prototype
+  prot = ctor.prototype;
+  if (isObjectObject(prot) === false) return false;
+
+  // If constructor does not have an Object-specific method
+  if (prot.hasOwnProperty('isPrototypeOf') === false) {
+    return false;
+  }
+
+  // Most likely a plain Object
+  return true;
+};
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImluZGV4LmpzIl0sIm5hbWVzIjpbImlzT2JqZWN0IiwicmVxdWlyZSIsImlzT2JqZWN0T2JqZWN0IiwibyIsIk9iamVjdCIsInByb3RvdHlwZSIsInRvU3RyaW5nIiwiY2FsbCIsIm1vZHVsZSIsImV4cG9ydHMiLCJpc1BsYWluT2JqZWN0IiwiY3RvciIsInByb3QiLCJjb25zdHJ1Y3RvciIsImhhc093blByb3BlcnR5Il0sIm1hcHBpbmdzIjoiQUFBQTs7Ozs7OztBQU9BOztBQUVBLElBQUlBLFdBQVdDLFFBQVEsVUFBUixDQUFmOztBQUVBLFNBQVNDLGNBQVQsQ0FBd0JDLENBQXhCLEVBQTJCO0FBQ3pCLFNBQU9ILFNBQVNHLENBQVQsTUFBZ0IsSUFBaEIsSUFDRkMsT0FBT0MsU0FBUCxDQUFpQkMsUUFBakIsQ0FBMEJDLElBQTFCLENBQStCSixDQUEvQixNQUFzQyxpQkFEM0M7QUFFRDs7QUFFREssT0FBT0MsT0FBUCxHQUFpQixTQUFTQyxhQUFULENBQXVCUCxDQUF2QixFQUEwQjtBQUN6QyxNQUFJUSxJQUFKLEVBQVNDLElBQVQ7O0FBRUEsTUFBSVYsZUFBZUMsQ0FBZixNQUFzQixLQUExQixFQUFpQyxPQUFPLEtBQVA7O0FBRWpDO0FBQ0FRLFNBQU9SLEVBQUVVLFdBQVQ7QUFDQSxNQUFJLE9BQU9GLElBQVAsS0FBZ0IsVUFBcEIsRUFBZ0MsT0FBTyxLQUFQOztBQUVoQztBQUNBQyxTQUFPRCxLQUFLTixTQUFaO0FBQ0EsTUFBSUgsZUFBZVUsSUFBZixNQUF5QixLQUE3QixFQUFvQyxPQUFPLEtBQVA7O0FBRXBDO0FBQ0EsTUFBSUEsS0FBS0UsY0FBTCxDQUFvQixlQUFwQixNQUF5QyxLQUE3QyxFQUFvRDtBQUNsRCxXQUFPLEtBQVA7QUFDRDs7QUFFRDtBQUNBLFNBQU8sSUFBUDtBQUNELENBcEJEIiwiZmlsZSI6InVua25vd24iLCJzb3VyY2VzQ29udGVudCI6WyIvKiFcbiAqIGlzLXBsYWluLW9iamVjdCA8aHR0cHM6Ly9naXRodWIuY29tL2pvbnNjaGxpbmtlcnQvaXMtcGxhaW4tb2JqZWN0PlxuICpcbiAqIENvcHlyaWdodCAoYykgMjAxNC0yMDE3LCBKb24gU2NobGlua2VydC5cbiAqIFJlbGVhc2VkIHVuZGVyIHRoZSBNSVQgTGljZW5zZS5cbiAqL1xuXG4ndXNlIHN0cmljdCc7XG5cbnZhciBpc09iamVjdCA9IHJlcXVpcmUoJ2lzb2JqZWN0Jyk7XG5cbmZ1bmN0aW9uIGlzT2JqZWN0T2JqZWN0KG8pIHtcbiAgcmV0dXJuIGlzT2JqZWN0KG8pID09PSB0cnVlXG4gICAgJiYgT2JqZWN0LnByb3RvdHlwZS50b1N0cmluZy5jYWxsKG8pID09PSAnW29iamVjdCBPYmplY3RdJztcbn1cblxubW9kdWxlLmV4cG9ydHMgPSBmdW5jdGlvbiBpc1BsYWluT2JqZWN0KG8pIHtcbiAgdmFyIGN0b3IscHJvdDtcblxuICBpZiAoaXNPYmplY3RPYmplY3QobykgPT09IGZhbHNlKSByZXR1cm4gZmFsc2U7XG5cbiAgLy8gSWYgaGFzIG1vZGlmaWVkIGNvbnN0cnVjdG9yXG4gIGN0b3IgPSBvLmNvbnN0cnVjdG9yO1xuICBpZiAodHlwZW9mIGN0b3IgIT09ICdmdW5jdGlvbicpIHJldHVybiBmYWxzZTtcblxuICAvLyBJZiBoYXMgbW9kaWZpZWQgcHJvdG90eXBlXG4gIHByb3QgPSBjdG9yLnByb3RvdHlwZTtcbiAgaWYgKGlzT2JqZWN0T2JqZWN0KHByb3QpID09PSBmYWxzZSkgcmV0dXJuIGZhbHNlO1xuXG4gIC8vIElmIGNvbnN0cnVjdG9yIGRvZXMgbm90IGhhdmUgYW4gT2JqZWN0LXNwZWNpZmljIG1ldGhvZFxuICBpZiAocHJvdC5oYXNPd25Qcm9wZXJ0eSgnaXNQcm90b3R5cGVPZicpID09PSBmYWxzZSkge1xuICAgIHJldHVybiBmYWxzZTtcbiAgfVxuXG4gIC8vIE1vc3QgbGlrZWx5IGEgcGxhaW4gT2JqZWN0XG4gIHJldHVybiB0cnVlO1xufTtcbiJdfQ==

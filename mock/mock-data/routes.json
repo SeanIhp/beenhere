@@ -1,0 +1,9 @@
+{
+  "/": "/",
+  "/mock/queryBusinessCoupon": "/queryBusinessCoupon",
+  "/mock/queryBusinessDetail": "/queryBusinessDetail",
+  "/mock/consumelist": "/consumelist",
+  "/mock/consumedetail": "/consumedetail",
+  "/mock/accountbills": "/accountbills",
+  "/mock/accountbilldetail": "/accountbilldetail"
+}

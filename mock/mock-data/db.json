@@ -1,0 +1,712 @@
+{
+    "queryBusinessDetail":{
+      "data": {
+        "accntlog": [
+          {
+            "coupon_name": "母婴满减券",
+            "coupon_no": "0000000172941767",
+            "coupon_type_code": "DQ0512",
+            "coupon_type_name": "母婴满减券",
+            "couponkind": "1",
+            "facevalue": "50",
+            "logdate": "2017-05-31 12:39:33",
+            "promotion_type_code": "01",
+            "simple_usage_desc": "全场母婴类使用",
+            "simple_usage_rule": "满199用一张",
+            "user_id": "SYS"
+          },
+          {
+            "coupon_name": "母婴满减券",
+            "coupon_no": "0000000172941767",
+            "coupon_type_code": "DQ0512",
+            "coupon_type_name": "母婴满减券",
+            "couponkind": "1",
+            "facevalue": "50",
+            "logdate": "2017-05-31 12:39:19",
+            "promotion_type_code": "01",
+            "simple_usage_desc": "全场母婴类使用",
+            "simple_usage_rule": "满199用一张",
+            "user_id": "SYS"
+          },
+          {
+            "coupon_name": "母婴满减券",
+            "coupon_no": "0000000172941767",
+            "coupon_type_code": "DQ0512",
+            "coupon_type_name": "母婴满减券",
+            "couponkind": "1",
+            "facevalue": "50",
+            "logdate": "2017-05-31 12:16:15",
+            "promotion_type_code": "01",
+            "simple_usage_desc": "全场母婴类使用",
+            "simple_usage_rule": "满199用一张",
+            "user_id": "SYS"
+          },
+          {
+            "coupon_name": "母婴满减券",
+            "coupon_no": "0000000172941767",
+            "coupon_type_code": "DQ0512",
+            "coupon_type_name": "母婴满减券",
+            "couponkind": "1",
+            "facevalue": "50",
+            "logdate": "2017-05-31 12:06:11",
+            "promotion_type_code": "01",
+            "simple_usage_desc": "全场母婴类使用",
+            "simple_usage_rule": "满199用一张",
+            "user_id": "SYS"
+          },
+          {
+            "coupon_name": "母婴满减券",
+            "coupon_no": "0000000172941767",
+            "coupon_type_code": "DQ0512",
+            "coupon_type_name": "母婴满减券",
+            "couponkind": "1",
+            "facevalue": "50",
+            "logdate": "2017-05-17 13:42:37",
+            "promotion_type_code": "01",
+            "simple_usage_desc": "全场母婴类使用",
+            "simple_usage_rule": "满199用一张",
+            "user_id": "SYS"
+          },
+          {
+            "coupon_name": "母婴满减券",
+            "coupon_no": "0000000172941767",
+            "coupon_type_code": "DQ0512",
+            "coupon_type_name": "母婴满减券",
+            "couponkind": "1",
+            "facevalue": "50",
+            "logdate": "2017-05-17 13:42:25",
+            "promotion_type_code": "01",
+            "simple_usage_desc": "全场母婴类使用",
+            "simple_usage_rule": "满199用一张",
+            "user_id": "SYS"
+          },
+          {
+            "coupon_name": "母婴满减券",
+            "coupon_no": "0000000172941767",
+            "coupon_type_code": "DQ0512",
+            "coupon_type_name": "母婴满减券",
+            "couponkind": "1",
+            "facevalue": "50",
+            "logdate": "2017-05-17 10:48:43",
+            "promotion_type_code": "01",
+            "simple_usage_desc": "全场母婴类使用",
+            "simple_usage_rule": "满199用一张",
+            "user_id": "SYS"
+          },
+          {
+            "coupon_name": "母婴满减券",
+            "coupon_no": "0000000172941767",
+            "coupon_type_code": "DQ0512",
+            "coupon_type_name": "母婴满减券",
+            "couponkind": "1",
+            "facevalue": "50",
+            "logdate": "2017-05-17 10:45:58",
+            "promotion_type_code": "01",
+            "simple_usage_desc": "全场母婴类使用",
+            "simple_usage_rule": "满199用一张",
+            "user_id": "SYS"
+          },
+          {
+            "coupon_name": "母婴满减券",
+            "coupon_no": "0000000172941767",
+            "coupon_type_code": "DQ0512",
+            "coupon_type_name": "母婴满减券",
+            "couponkind": "1",
+            "facevalue": "50",
+            "logdate": "2017-05-17 10:45:58",
+            "promotion_type_code": "01",
+            "simple_usage_desc": "全场母婴类使用",
+            "simple_usage_rule": "满199用一张",
+            "user_id": "SYS"
+          },
+          {
+            "coupon_name": "母婴满减券",
+            "coupon_no": "0000000172941767",
+            "coupon_type_code": "DQ0512",
+            "coupon_type_name": "母婴满减券",
+            "couponkind": "1",
+            "facevalue": "50",
+            "logdate": "2017-05-17 10:45:58",
+            "promotion_type_code": "01",
+            "simple_usage_desc": "全场母婴类使用",
+            "simple_usage_rule": "满199用一张",
+            "user_id": "SYS"
+          },
+          {
+            "coupon_name": "母婴满减券",
+            "coupon_no": "0000000172941767",
+            "coupon_type_code": "DQ0512",
+            "coupon_type_name": "母婴满减券",
+            "couponkind": "1",
+            "facevalue": "50",
+            "logdate": "2017-05-17 10:45:58",
+            "promotion_type_code": "01",
+            "simple_usage_desc": "全场母婴类使用",
+            "simple_usage_rule": "满199用一张",
+            "user_id": "SYS"
+          },
+          {
+            "coupon_name": "母婴满减券",
+            "coupon_no": "0000000172941767",
+            "coupon_type_code": "DQ0512",
+            "coupon_type_name": "母婴满减券",
+            "couponkind": "1",
+            "facevalue": "50",
+            "logdate": "2017-05-17 10:45:58",
+            "promotion_type_code": "01",
+            "simple_usage_desc": "全场母婴类使用",
+            "simple_usage_rule": "满199用一张",
+            "user_id": "SYS"
+          }
+        ],
+        "total_results": "17"
+      },
+      "elapsed": [
+        "总耗时: 16 ms"
+      ],
+      "returncode": "0"
+    },
+    "queryBusinessCoupon":{
+      "data": {
+        "datalist": [
+          {
+            "cash": "0",
+            "comingend": "N",
+            "countdown": "0",
+            "coupon_name": "母婴满减券",
+            "coupon_type_code": "DQ0512",
+            "custlimit": "0",
+            "event_eff_date": "2017-05-12 00:00:00",
+            "event_eff_time": "10:00",
+            "event_exp_date": "2017-05-31 00:00:00",
+            "event_exp_time": "16:00",
+            "event_id": "156715734846701317",
+            "event_pic_url": "http://wx.cloud360.com.cn/amp-resource-webin/resource/6D635244398796A318DB532AE9B2A090",
+            "event_type_code": "2",
+            "event_type_name": "抢券",
+            "facevalue": "50",
+            "grabbednum": "44",
+            "points": "0",
+            "promotion_type_code": "01",
+            "promotion_type_name": "面值",
+            "rationmode": "0",
+            "restnum": "0",
+            "restnum_day": 0,
+            "row_id": "1",
+            "simple_usage_desc": "全场母婴类使用",
+            "simple_usage_rule": "满199用一张",
+            "status": "Y",
+            "totnum": "0",
+            "totnum_day": 0,
+            "validity_days": "3",
+            "validity_mode": "2"
+          },
+          {
+            "cash": "0.01",
+            "comingend": "N",
+            "countdown": "0",
+            "coupon_name": "95折折扣券",
+            "coupon_type_code": "ZKHDQ20170508",
+            "custlimit": "0",
+            "custlimit_day": "0",
+            "event_eff_date": "2017-05-27 00:00:00",
+            "event_eff_time": "15:35",
+            "event_exp_date": "2017-05-31 00:00:00",
+            "event_exp_time": "17:30",
+            "event_id": "156853373239312273",
+            "event_type_code": "5",
+            "event_type_name": "积分加现金买券",
+            "facevalue": "0.95",
+            "grabbednum": "11",
+            "grabbednum_day": "0",
+            "points": "10",
+            "promotion_type_code": "02",
+            "promotion_type_name": "折扣",
+            "rationmode": "0",
+            "receivenum": "0",
+            "restnum": "0",
+            "restnum_day": "0",
+            "row_id": "2",
+            "simple_usage_desc": "满300享受95折折扣券一张",
+            "simple_usage_rule": "满300享受95折折扣券一张",
+            "status": "Y",
+            "totnum": "0",
+            "totnum_day": "0",
+            "validity_days": "0",
+            "validity_mode": "4"
+          },
+          {
+            "cash": "0.01",
+            "comingend": "N",
+            "countdown": "0",
+            "coupon_name": "20170527",
+            "coupon_type_code": "MJHDQ2070527",
+            "custlimit": "0",
+            "custlimit_day": "0",
+            "event_eff_date": "2017-05-27 00:00:00",
+            "event_eff_time": "00:00",
+            "event_exp_date": "2017-05-31 00:00:00",
+            "event_exp_time": "23:59",
+            "event_id": "156854027655583970",
+            "event_type_code": "5",
+            "event_type_name": "积分加现金买券",
+            "facevalue": "10",
+            "grabbednum": "9",
+            "grabbednum_day": "0",
+            "points": "10",
+            "promotion_type_code": "01",
+            "promotion_type_name": "面值",
+            "rationmode": "1",
+            "receivenum": "0",
+            "restnum": "1",
+            "restnum_day": "0",
+            "row_id": "3",
+            "simple_usage_desc": "满减活动券",
+            "simple_usage_rule": "满减活动券",
+            "status": "Y",
+            "totnum": "10",
+            "totnum_day": "0",
+            "validity_days": "0",
+            "validity_mode": "4"
+          },
+          {
+            "cash": "0.01",
+            "comingend": "N",
+            "countdown": "0",
+            "coupon_name": "20170527",
+            "coupon_type_code": "MJHDQ2070527",
+            "custlimit": "0",
+            "custlimit_day": "0",
+            "event_eff_date": "2017-05-27 00:00:00",
+            "event_eff_time": "20:00",
+            "event_exp_date": "2017-05-31 00:00:00",
+            "event_exp_time": "23:59",
+            "event_id": "156853981518253090",
+            "event_type_code": "5",
+            "event_type_name": "积分加现金买券",
+            "facevalue": "10",
+            "grabbednum": "0",
+            "grabbednum_day": "0",
+            "points": "1",
+            "promotion_type_code": "01",
+            "promotion_type_name": "面值",
+            "rationmode": "0",
+            "receivenum": "0",
+            "restnum": "0",
+            "restnum_day": "0",
+            "row_id": "4",
+            "simple_usage_desc": "满减活动券",
+            "simple_usage_rule": "满减活动券",
+            "status": "Y",
+            "totnum": "0",
+            "totnum_day": "0",
+            "validity_days": "0",
+            "validity_mode": "4"
+          },
+          {
+            "cash": "0.01",
+            "comingend": "N",
+            "countdown": "0",
+            "coupon_name": "20170527",
+            "coupon_type_code": "MJHDQ2070527",
+            "custlimit": "0",
+            "custlimit_day": "0",
+            "event_eff_date": "2017-05-29 00:00:00",
+            "event_eff_time": "10:00",
+            "event_exp_date": "2017-05-31 00:00:00",
+            "event_exp_time": "23:59",
+            "event_id": "156853857576561933",
+            "event_type_code": "5",
+            "event_type_name": "积分加现金买券",
+            "facevalue": "10",
+            "grabbednum": "0",
+            "grabbednum_day": "0",
+            "points": "10",
+            "promotion_type_code": "01",
+            "promotion_type_name": "面值",
+            "rationmode": "0",
+            "receivenum": "0",
+            "restnum": "0",
+            "restnum_day": "0",
+            "row_id": "5",
+            "simple_usage_desc": "满减活动券",
+            "simple_usage_rule": "满减活动券",
+            "status": "Y",
+            "totnum": "0",
+            "totnum_day": "0",
+            "validity_days": "0",
+            "validity_mode": "4"
+          },
+          {
+            "cash": "0.01",
+            "comingend": "N",
+            "countdown": "0",
+            "coupon_name": "限量礼品券",
+            "coupon_type_code": "XLLPQ20170525",
+            "custlimit": "0",
+            "custlimit_day": "0",
+            "event_eff_date": "2017-05-27 00:00:00",
+            "event_eff_time": "00:00",
+            "event_exp_date": "2017-05-31 00:00:00",
+            "event_exp_time": "23:59",
+            "event_id": "156853646183643668",
+            "event_type_code": "5",
+            "event_type_name": "积分加现金买券",
+            "facevalue": "2",
+            "grabbednum": "0",
+            "grabbednum_day": "0",
+            "points": "10",
+            "promotion_type_code": "01",
+            "promotion_type_name": "面值",
+            "rationmode": "1",
+            "receivenum": "0",
+            "restnum": "10",
+            "restnum_day": "0",
+            "row_id": "6",
+            "simple_usage_desc": "买券活动礼品券",
+            "simple_usage_rule": "礼品券",
+            "status": "Y",
+            "totnum": "10",
+            "totnum_day": "0",
+            "validity_days": "0",
+            "validity_edate": "2017-05-31 00:00:00",
+            "validity_mode": "1",
+            "validity_sdate": "2017-05-25 00:00:00"
+          },
+          {
+            "cash": "0.01",
+            "comingend": "N",
+            "countdown": "0",
+            "coupon_name": "18元面值券",
+            "coupon_type_code": "HDMZQ2017052201",
+            "custlimit": "0",
+            "custlimit_day": "0",
+            "event_eff_date": "2017-05-27 00:00:00",
+            "event_eff_time": "16:30",
+            "event_exp_date": "2017-05-31 00:00:00",
+            "event_exp_time": "23:59",
+            "event_id": "156853500746137707",
+            "event_type_code": "5",
+            "event_type_name": "积分加现金买券",
+            "facevalue": "18",
+            "grabbednum": "1",
+            "grabbednum_day": "0",
+            "points": "10",
+            "promotion_type_code": "01",
+            "promotion_type_name": "面值",
+            "rationmode": "0",
+            "receivenum": "0",
+            "restnum": "0",
+            "restnum_day": "0",
+            "row_id": "7",
+            "simple_usage_desc": "18元面值券",
+            "simple_usage_rule": "18元面值券",
+            "status": "Y",
+            "totnum": "0",
+            "totnum_day": "0",
+            "validity_days": "0",
+            "validity_edate": "2017-05-31 00:00:00",
+            "validity_mode": "1",
+            "validity_sdate": "2017-05-01 00:00:00"
+          },
+          {
+            "cash": "0.01",
+            "comingend": "N",
+            "countdown": "0",
+            "coupon_name": "买券活动5元券",
+            "coupon_type_code": "XJQMQHD20170518",
+            "custlimit": "0",
+            "custlimit_day": "0",
+            "event_eff_date": "2017-05-27 00:00:00",
+            "event_eff_time": "00:00",
+            "event_exp_date": "2017-05-31 00:00:00",
+            "event_exp_time": "23:59",
+            "event_id": "156853276665451295",
+            "event_pic_url": "http://wx.cloud360.com.cn/amp-resource-webin/resource/1F9ACB9A47637AED179E8913764208D7",
+            "event_type_code": "5",
+            "event_type_name": "积分加现金买券",
+            "facevalue": "5",
+            "grabbednum": "4",
+            "grabbednum_day": "0",
+            "points": "10",
+            "promotion_type_code": "01",
+            "promotion_type_name": "面值",
+            "rationmode": "1",
+            "receivenum": "0",
+            "restnum": "6",
+            "restnum_day": "0",
+            "row_id": "8",
+            "simple_usage_desc": "5元面值券-买券活动",
+            "simple_usage_rule": "5元面值券-买券活动",
+            "status": "Y",
+            "totnum": "10",
+            "totnum_day": "0",
+            "validity_days": "0",
+            "validity_edate": "2017-05-31 00:00:00",
+            "validity_mode": "1",
+            "validity_sdate": "2017-05-01 00:00:00"
+          }
+        ],
+        "total_results": "54"
+      },
+      "elapsed": [
+        "总耗时: 78 ms"
+      ],
+      "returncode": "0"
+    },
+    "banner": {
+        "data": [
+            {
+                "image": "http://static.huosu.com/s/data/upload/image/20161123/1479881176m6jj.png",
+                "iid": "0"
+            },
+            {
+                "image": "http://static.huosu.com/s/data/upload/image/20161123/1479881187PmqV.png",
+                "iid": "0"
+            },
+            {
+                "image": "http://static.huosu.com/s/data/upload/image/20161123/1479881198WDrW.png",
+                "iid": "0"
+            }
+        ]
+    },
+    "blastgoods": {
+        "data": [
+            {
+                "iid": "65",
+                "name": "富安娜（FUANNA）家纺被子全棉印花冬厚被 爱恋1.8米床适用（230cm*229cm）",
+                "thumb": "http://static.huosu.com/s/image/201701/148391826621Cn.jpg",
+                "master_img_url": "http://static.huosu.com/s/image/201701/148391826621Cn.jpg,http://static.huosu.com/s/image/201701/1483918266UeXk.jpeg,http://static.huosu.com/s/image/201701/1483918266w4vW.jpg",
+                "m_desc": "富安娜（FUANNA）家纺被子全棉印花冬厚被 爱恋1.8米床适用（230cm*229cm）",
+                "sale_price": "0.10"
+            },
+            {
+                "iid": "66",
+                "name": "多喜爱(Dohia)床品套件 全棉斜纹简约风加大双人床单四件套-雅克德罗230x230cm床",
+                "thumb": "http://static.huosu.com/s/data/upload/image/20161123/14798809523i64.png",
+                "master_img_url": "",
+                "m_desc": "多喜爱(Dohia)床品套件 全棉斜纹简约风加大双人床单四件套-雅克德罗230x230cm床",
+                "sale_price": "159.00"
+            },
+            {
+                "iid": "67",
+                "name": "禧天龙Citylong 塑",
+                "thumb": "http://static.huosu.com/s/data/upload/image/20161123/1479881001x0k5.png",
+                "master_img_url": "http://static.huosu.com/s/image/201701/1483871346JY37.png",
+                "m_desc": "禧天龙Citylong 塑料收纳箱整理箱大号环保储物箱3个装 卡其色60L 6063",
+                "sale_price": "199.00"
+            },
+            {
+                "iid": "68",
+                "name": "禧天龙Citylong塑料收纳柜抽屉式儿童衣物整理柜彩色42L1601",
+                "thumb": "http://static.huosu.com/s/data/upload/image/20161123/1479881042jBXl.png",
+                "master_img_url": "",
+                "m_desc": "禧天龙Citylong塑料收纳柜抽屉式儿童衣物整理柜彩色42L1601",
+                "sale_price": "79.90"
+            },
+            {
+                "iid": "69",
+                "name": "绿驰(Greensky) 纳米光触媒甲醛清除剂 新房装修家具去除甲醛苯氨喷雾剂 除油漆味异味除菌防霉 280ml",
+                "thumb": "http://static.huosu.com/s/data/upload/image/20161123/1479881098TFJC.png",
+                "master_img_url": "",
+                "m_desc": "绿驰(Greensky) 纳米光触媒甲醛清除剂 新房装修家具去除甲醛苯氨喷雾剂 除油漆味异味除菌防霉 280ml",
+                "sale_price": "99.00"
+            },
+            {
+                "iid": "70",
+                "name": "超细纤维百变魔术浴巾/浴袍-玫红",
+                "thumb": "http://static.huosu.com/s/data/upload/image/20161123/1479881145JmJM.png",
+                "master_img_url": "",
+                "m_desc": "超细纤维百变魔术浴巾/浴袍-玫红",
+                "sale_price": "28.00"
+            },
+            {
+                "iid": "71",
+                "name": "超细纤维百变魔术浴巾/浴袍-玫红",
+                "thumb": "http://static.huosu.com/s/data/upload/image/20161123/1479881145JmJM.png",
+                "master_img_url": "",
+                "m_desc": "超细纤维百变魔术浴巾/浴袍-玫红",
+                "sale_price": "28.00"
+            },
+            {
+                "iid": "72",
+                "name": "超细纤维百变魔术浴巾/浴袍-玫红",
+                "thumb": "http://static.huosu.com/s/data/upload/image/20161123/1479881145JmJM.png",
+                "master_img_url": "",
+                "m_desc": "超细纤维百变魔术浴巾/浴袍-玫红",
+                "sale_price": "28.00"
+            }                        
+        ]
+    },
+    "accountbills":{
+        "data":{
+            "datalist": [
+                {
+                    "settlement_no":"DZ2017ASE05789",
+                    "expense_amount":"55000.00",
+                    "settlement_amount":"20000.00",
+                    "settle_start_date":"2017.05.01",
+                    "settle_end_date":"2017.05.31",
+                    "status":"Y"
+                },
+                {
+                    "settlement_no":"DZ2017ASE04514",
+                    "expense_amount":"40000.00",
+                    "settlement_amount":"27000.00",
+                    "settle_start_date":"2017.04.01",
+                    "settle_end_date":"2017.04.30",
+                    "status":"Y"               
+                },
+                {
+                    "settlement_no":"DZ2017ASE03781",
+                    "expense_amount":"38000.00",
+                    "settlement_amount":"10000.00",
+                    "settle_start_date":"2017.03.01",
+                    "settle_end_date":"2017.03.31",
+                    "status":"Y"              
+                },
+                {
+                    "settlement_no":"DZ2017ASE02917",
+                    "expense_amount":"87000.00",
+                    "settlement_amount":"50000.00",
+                    "settle_start_date":"2017.02.01",
+                    "settle_end_date":"2017.02.28",
+                    "status":"Y"               
+                },
+                {
+                    "settlement_no":"DZ2017ASE01143",
+                    "expense_amount":"25400.00",
+                    "settlement_amount":"18000.00",
+                    "settle_start_date":"2017.01.01",
+                    "settle_end_date":"2017.01.31",
+                    "status":"N"               
+                },
+                {
+                    "settlement_no":"DZ2017ASE05789",
+                    "expense_amount":"55000.00",
+                    "settlement_amount":"20000.00",
+                    "settle_start_date":"2017.05.01",
+                    "settle_end_date":"2017.05.31",
+                    "status":"N"
+                },
+                {
+                    "settlement_no":"DZ2017ASE04514",
+                    "expense_amount":"40000.00",
+                    "settlement_amount":"27000.00",
+                    "settle_start_date":"2017.04.01",
+                    "settle_end_date":"2017.04.30",
+                    "status":"N"               
+                },
+                {
+                    "settlement_no":"DZ2017ASE03781",
+                    "expense_amount":"38000.00",
+                    "settlement_amount":"10000.00",
+                    "settle_start_date":"2017.03.01",
+                    "settle_end_date":"2017.03.31",
+                    "status":"N"              
+                },
+                {
+                    "settlement_no":"DZ2017ASE02917",
+                    "expense_amount":"87000.00",
+                    "settlement_amount":"50000.00",
+                    "settle_start_date":"2017.02.01",
+                    "settle_end_date":"2017.02.28",
+                    "status":"N"               
+                },
+                {
+                    "settlement_no":"DZ2017ASE01143",
+                    "expense_amount":"25400.00",
+                    "settlement_amount":"18000.00",
+                    "settle_start_date":"2017.01.01",
+                    "settle_end_date":"2017.01.31",
+                    "status":"N"               
+                }                  
+            ],
+            "total_results": "10"           
+        },
+        "returncode": "0"
+    },
+    "accountbilldetail":
+    {
+        "data":
+        {
+        "datalist": [
+            {
+            "coupon_type_code":"01",
+            "facevalue":"5",
+            "expense_amount":"5000.00",
+            "share_ratio":"50%",
+            "settlement_amount":"2500.00",
+            "simple_usage_rule":"直接抵现"
+            },
+            {
+            "coupon_type_code":"02",
+            "facevalue": "0.7",
+            "expense_amount": "4850.00",
+            "share_ratio": "30%",
+            "settlement_amount": "1455.00",
+            "simple_usage_rule": "直接抵现"
+            }
+        ],
+        "total_results": "2"
+        },
+        "returncode": "0"
+    },
+    "consumelist":
+    {
+        "data":
+        {
+        "accntlog": [
+            {
+            "promotion_type_code":"01",
+            "facevalue": "1",
+            "simple_usage_rule": "满100元可用",
+            "coupon_no": "111",
+            "user_id": "张三",
+            "logdate": "2017.04.13 15:58:29"
+            },{
+            "promotion_type_code":"02",
+            "facevalue": "0.5",
+            "simple_usage_rule": "满200元可用",
+            "coupon_no": "222",
+            "user_id": "李四",
+            "logdate": "2017.04.13 15:58:29"
+            }
+        ],
+        "total_results": 2
+        },
+        "returncode": "0"
+    },
+    "consumedetail":
+    {
+        "data": {
+            "amount": "0.5",
+            "coupon_name": "zwd5折券",
+            "coupon_no": "0000000172341743",
+            "coupon_type_code": "ZWD211",
+            "coupon_type_name": "zwd5折券",
+            "eff_date": "1900-01-01 00:00:00",
+            "exp_date": "2099-12-31 00:00:00",
+            "facevalue": "0.5",
+            "group_id": "05",
+            "ispayback": "N",
+            "occur_date": "2017-05-11 16:26:33",
+            "page_count": 1,
+            "promotion_type_code": "02",
+            "qrcode": "1424461045175467",
+            "rows_count": 1,
+            "simple_usage_desc": "zwd5折券描述",
+            "simple_usage_rule": "zwd5折券规则",
+            "src_op": "83",
+            "status": "01",
+            "type_id": "ZWD211"
+        },
+    "returncode": "0"
+    },
+    "address": [
+        {
+            "name": "typicode"
+        }
+    ],
+    "orders": []
+}

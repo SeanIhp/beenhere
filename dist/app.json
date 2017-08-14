@@ -1,0 +1,27 @@
+{
+  "pages": [
+    "pages/home/index",
+    "pages/position/index",
+    "pages/mine/index"
+  ],
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [{
+              "pagePath": "pages/home/index",
+              "text": "Here"
+            }, {
+              "pagePath": "pages/mine/index",
+              "text": "Mine"
+            }]
+  },
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#515151",
+    "navigationBarTitleText": "BEEN HERE!",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": true
+  }
+}
