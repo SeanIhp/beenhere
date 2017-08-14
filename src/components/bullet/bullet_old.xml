@@ -1,0 +1,1 @@
+<text class="bullet-text" animation="{{state.animation}}" style="top:400;" >{{props.bullet.text+"____"+props.index}}</text>

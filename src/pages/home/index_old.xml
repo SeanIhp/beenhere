@@ -1,0 +1,142 @@
+<view class="container">
+
+  <view class="page-body">
+
+    <view class="page-section page-section-spacing swiper">
+        <view class="locationInfo">
+          <image class="locationIcon" src="../../assets/images/location.png"></image>
+          <text class="locationText">{{state.locationAddress}}附近</text>
+        </view>
+
+      <block wx:if="{{true}}">
+        <view style="margin-top:120px;">
+            <!-- <list key="bulletList" name="bullet"/> -->
+            <rich-text animation="{{state.bullet0.ani}}" class="bullet-text" style="top:20px;left:{{state.clientWidth}}px;">
+              <span style="color:{{state.bullet0.color}};font-size:{{state.bullet0.size}}px">
+                {{state.bullet0.text}}
+              </span>
+            </rich-text>
+            <rich-text animation="{{state.bullet1.ani}}" class="bullet-text" style="top:40px;left:{{state.clientWidth}}px;">
+              <span style="color:{{state.bullet1.color}};font-size:{{state.bullet1.size}}px">
+                {{state.bullet1.text}}
+              </span>
+            </rich-text>
+            <rich-text animation="{{state.bullet2.ani}}" class="bullet-text" style="top:60px;left:{{state.clientWidth}}px;">
+              <span style="color:{{state.bullet2.color}};font-size:{{state.bullet2.size}}px">
+                {{state.bullet2.text}}
+              </span>
+            </rich-text>
+            <rich-text animation="{{state.bullet3.ani}}" class="bullet-text" style="top:80px;left:{{state.clientWidth}}px;">
+              <span style="color:{{state.bullet3.color}};font-size:{{state.bullet3.size}}px">
+                {{state.bullet3.text}}
+              </span>
+            </rich-text>
+            <rich-text animation="{{state.bullet4.ani}}" class="bullet-text" style="top:100px;left:{{state.clientWidth}}px;">
+              <span style="color:{{state.bullet4.color}};font-size:{{state.bullet4.size}}px">
+                {{state.bullet4.text}}
+              </span>
+            </rich-text>
+            <rich-text animation="{{state.bullet5.ani}}" class="bullet-text" style="top:120px;left:{{state.clientWidth}}px;">
+              <span style="color:{{state.bullet5.color}};font-size:{{state.bullet5.size}}px">
+                {{state.bullet5.text}}
+              </span>
+            </rich-text>
+            <rich-text animation="{{state.bullet6.ani}}" class="bullet-text" style="top:140px;left:{{state.clientWidth}}px;">
+              <span style="color:{{state.bullet6.color}};font-size:{{state.bullet6.size}}px">
+                {{state.bullet6.text}}
+              </span>
+            </rich-text>
+            <rich-text animation="{{state.bullet7.ani}}" class="bullet-text" style="top:160px;left:{{state.clientWidth}}px;">
+              <span style="color:{{state.bullet7.color}};font-size:{{state.bullet7.size}}px">
+                {{state.bullet7.text}}
+              </span>
+            </rich-text>
+            <rich-text animation="{{state.bullet8.ani}}" class="bullet-text" style="top:180px;left:{{state.clientWidth}}px;">
+              <span style="color:{{state.bullet8.color}};font-size:{{state.bullet8.size}}px">
+                {{state.bullet8.text}}
+              </span>
+            </rich-text>
+            <rich-text animation="{{state.bullet9.ani}}" class="bullet-text" style="top:200px;left:{{state.clientWidth}}px;">
+              <span style="color:{{state.bullet9.color}};font-size:{{state.bullet9.size}}px">
+                {{state.bullet9.text}}
+              </span>
+            </rich-text>
+            <rich-text animation="{{state.bullet10.ani}}" class="bullet-text" style="top:220px;left:{{state.clientWidth}}px;">
+              <span style="color:{{state.bullet10.color}};font-size:{{state.bullet10.size}}px">
+                {{state.bullet10.text}}
+              </span>
+            </rich-text>
+            <rich-text animation="{{state.bullet11.ani}}" class="bullet-text" style="top:240px;left:{{state.clientWidth}}px;">
+              <span style="color:{{state.bullet11.color}};font-size:{{state.bullet11.size}}px">
+                {{state.bullet11.text}}
+              </span>
+            </rich-text>
+            <rich-text animation="{{state.bullet12.ani}}" class="bullet-text" style="top:260px;left:{{state.clientWidth}}px;">
+              <span style="color:{{state.bullet12.color}};font-size:{{state.bullet12.size}}px">
+                {{state.bullet12.text}}
+              </span>
+            </rich-text>
+            <rich-text animation="{{state.bullet13.ani}}" class="bullet-text" style="top:280px;left:{{state.clientWidth}}px;">
+              <span style="color:{{state.bullet13.color}};font-size:{{state.bullet13.size}}px">
+                {{state.bullet13.text}}
+              </span>
+            </rich-text>
+            <rich-text animation="{{state.bullet14.ani}}" class="bullet-text" style="top:300px;left:{{state.clientWidth}}px;">
+              <span style="color:{{state.bullet14.color}};font-size:{{state.bullet14.size}}px">
+                {{state.bullet14.text}}
+              </span>
+            </rich-text>
+            <!-- <rich-text animation="{{state.bullet1.ani}}" class="bullet-text" style="top:75px;">
+              <span style="margin-left:{{state.bullet1.left}}px;color:{{state.bullet1.color}};font-size:{{state.bullet1.size}}">
+                {{state.bullet1.text}}
+              </span>
+            </rich-text>
+            <rich-text animation="{{state.bullet2.ani}}" class="bullet-text" style="top:100px;">
+              <span style="margin-left:{{state.bullet2.left}}px;color:{{state.bullet2.color}};font-size:{{state.bullet2.size}}">
+                {{state.bullet2.text}}
+              </span>
+            </rich-text> -->
+            <!-- <rich-text animation="{{state.magazine.bullets[0].ani}}" class="bullet-text" style="top:50px;">
+              <span style="margin-left:{{state.magazine.bullets[0].left}}px;color:{{state.magazine.bullets[0].color}};font-size:{{state.magazine.bullets[0].size}}">
+                {{state.magazine.bullets[0].text}}
+              </span>
+            </rich-text>
+            <rich-text animation="{{state.magazine.bullets[1].ani}}" class="bullet-text" style="top:75px;">
+              <span style="margin-left:{{state.magazine.bullets[1].left}}px;color:{{state.magazine.bullets[1].color}};font-size:{{state.magazine.bullets[1].size}}">
+                {{state.magazine.bullets[1].text}}
+              </span>
+            </rich-text>
+            <rich-text animation="{{state.magazine.bullets[2].ani}}" class="bullet-text" style="top:100px;">
+              <span style="margin-left:{{state.magazine.bullets[2].left}}px;color:{{state.magazine.bullets[2].color}};font-size:{{state.magazine.bullets[2].size}}">
+                {{state.magazine.bullets[2].text}}
+              </span>
+            </rich-text> -->
+            <!-- 
+            <text animation="{{state.magazine.bullets[1].ani}}" class="bullet-text" style="top:50px;left:240px;color:{{state.magazine.bullets[1].color}};">BBBBBBB</text>
+            <text animation="{{state.magazine.bullets[2].ani}}" class="bullet-text" style="top:75px;left:280px;color:{{state.magazine.bullets[2].color}};">CCCCCCCC</text> -->
+            <!-- <text animation="{{state.bullet_3.ani}}" class="bullet-text" style="top:100px;left:{state.bullet_3.left">DDDDDDD</text>
+            <text animation="{{state.bullet_4.ani}}" class="bullet-text" style="top:125px;left:{state.bullet_4.left">EEEEEE</text>
+            <text animation="{{state.bullet_5.ani}}" class="bullet-text" style="top:150px;left:{state.bullet_5.left">FFFFFF</text>
+            <text animation="{{state.bullet_6.ani}}" class="bullet-text" style="top:175px;left:{state.bullet_6.left">GGGGGG</text>
+            <text animation="{{state.bullet_7.ani}}" class="bullet-text" style="top:200px;left:{state.bullet_7.left">HHHHHH</text>
+            <text animation="{{state.bullet_8.ani}}" class="bullet-text" style="top:225px;left:{state.bullet_8.left">IIIIIIIII</text>
+            <text animation="{{state.bullet_9.ani}}" class="bullet-text" style="top:250px;left:{state.bullet_9.left">JJJJJJ</text> -->
+        </view>
+      </block>
+    </view>
+
+    <view class="page-section" style="margin-top: 330px;margin-bottom: 0;">
+      <view class="weui-flex">
+          <view class="weui-flex__item">
+            <slider value="100" bindchange="slider4change" min="50" max="500" show-value="{{true}}"/>
+          </view>
+          <view class="weui-flex__item">
+            <button type="default" bindtap="chooseLocation">
+              relocation
+            </button>
+          </view>
+      </view>
+    </view>
+  </view>
+  
+</view>

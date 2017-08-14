@@ -1,0 +1,1 @@
+<text class="bullet-text" animation="{{state.animation}}" style="top:{{state.top*2.34+50}}rpx;left:{{state.left}}px;font-size:{{state.size}}px;color:{{state.color}};">{{props.bullet.text}}</text>

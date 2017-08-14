@@ -1,0 +1,5 @@
+<rich-text animation="{{state.ani}}" class="bullet-text" style="top:{{state.ballistic.top}}px;left:{{state.left-50}}px;">
+    <span style="color:{{state.color}};font-size:{{state.size}}">
+        ;lkhlkhkihlh;lkhihlihoiuhiuhinhhohbouoihnpiojmopk,pkmoijiuhbiuyvfcdrecrtfvbgnhlm;k,pokminhbugvfctrdvybu
+    </span>
+</rich-text>
