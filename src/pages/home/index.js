@@ -12,109 +12,6 @@ var formatLocation = util.formatLocation
 
 const { array, func } = PropTypes;
 
-// class XXXBullet {
-//   constructor(_bullet, _total, _magazine, _serial) {
-//         this.bullet = _bullet;
-//         this._speedSeed = 1.5;
-//         this._delaySeed = 2333;
-//         this.serial = _serial;
-//         let that = this;
-//         this.owner = _magazine;
-//         this.text = _bullet.text;
-//         this.color = null;
-//         this.size = null;
-//         this.direct = 0;
-//         this.delay = 0;
-//         this.speed = 0;
-//         this.top = null;
-//         this.left = null;
-//         this.animation = wx.createAnimation();
-//         this.ani = this.animation.export();
-//         switch((""+_bullet.bore).length){
-//             case 10:
-//                 this.color = "#E3CC72";
-//                 this.size = 20;
-//                 this.speed = 22000/this._speedSeed;
-//                 break;
-//             case 9:
-//                 this.color = "#EE6666";
-//                 this.size = 18;
-//                 this.speed = 23000/this._speedSeed;
-//                 break;
-//             case 8:
-//                 this.color = "#6666EE";
-//                 this.size = 18;
-//                 this.speed = 24000/this._speedSeed;
-//                 break;
-//             case 7:
-//                 this.color = "#F4607E";
-//                 this.size = 16;
-//                 this.speed = 25000/this._speedSeed;
-//                 break;
-//             case 6:
-//                 this.color = "#EE66B8";
-//                 this.size = 16;
-//                 this.speed = 26000/this._speedSeed;
-//                 break;
-//             case 5:
-//                 this.color = "#CC88CC";
-//                 this.size = 14;
-//                 this.speed = 27000/this._speedSeed;
-//                 break;
-//             case 4:
-//                 this.color = "#82B2D2";
-//                 this.size = 14;
-//                 this.speed = 28000/this._speedSeed;
-//                 break;
-//             case 3:
-//                 this.color = "#8FD87D";
-//                 this.size = 12;
-//                 this.speed = 29000/this._speedSeed;
-//                 break;
-//             case 2:
-//                 this.color = "#AECC33";
-//                 this.size = 12;
-//                 this.speed = 30000/this._speedSeed;
-//                 break;
-//             case 1: 
-//                 this.color = "#C1E8C1";
-//                 this.size = 10;
-//                 this.speed = 30000/this._speedSeed;    //31000/this._speedSeed;
-//                 break;
-//             case 0: 
-//                 this.color = "#EEE4BB";
-//                 this.size = 8;
-//                 this.speed = 32000/this._speedSeed;
-//                 break;
-//             default:
-//                 this.color = "#FF0000";
-//                 this.size = 22;
-//                 this.speed = 21000/this._speedSeed;
-//         }
-//         // let _tn = Math.round(Math.random()*12)*20;
-//         // let _ln = Math.round(Math.random()*wx.getSystemInfoSync().windowWidth);
-//         // this.top = 25 + _tn;
-//         //this.left = wx.getSystemInfoSync().windowWidth+_ln*2;
-//         // this.left = wx.getSystemInfoSync().windowWidth + !!this.text?this.text.length*this.size:0;
-//         this.left = wx.getSystemInfoSync().windowWidth;
-
-//         this.direct = this.left + (!!this.text?this.text.length*(this.size+4):0);
-//         // let _direct = (!!this.text?this.text.length*(this.size+4):0);
-//         this.delay = Math.round(Math.random()*_total);
-//         this.size = 14;
-//         console.log("Bullet's ______: ", this.text);
-//         console.log("Bullet's ______INIT_____left/delay/len/direct/speed: ", this.left, this.delay*this._delaySeed, this.text.length, this.direct, this.speed);
-//         // console.log("Bullet's ______INIT_____direct/speed: ", _direct, this.speed);
-//         this.animation.translate(-1*Math.abs(this.direct), 0).step({duration: this.speed, delay: this.delay*this._delaySeed});
-//         this.animation.translate(Math.abs(this.direct), 0).step({duration: 1});
-//         this.ani = this.animation.export();
-
-//         setTimeout(()=>{
-//           this.owner.loadBullet(this.serial, this.bullet);
-//         }, this.speed+2000+this.delay*this._delaySeed);
-//   }
-// }
-
 class Home extends Component {
   // static propTypes = {
   // };
@@ -171,46 +68,44 @@ class Home extends Component {
   //   setTimeout(doShoot, (1+Math.round(Math.random()*10))*1000);
   // }
 
-  doEject(_bullet){
-    doAction('home','doEject', {payload: {bullet: _bullet}});
-  }
+  // doEject(_bullet){
+  //   doAction('home','doEject', {payload: {bullet: _bullet}});
+  // }
 
-  doShoot(_theShooter, _doAction){
-    if(_theShooter.length>0){
-      let shtr = _theShooter.shift();
-      
-      arguments.callee()
-    }
-  }
 
   onLoad() {
       let that = this;
       qqmapsdk = new QQMapWX({
           key: 'U2GBZ-QWSRO-YCNWX-SICFH-GL2GO-CXFWE'
       });
-      // setTimeout(()=>{
-      //   let mags = {...this.state.magazine};
-      //   let blts = {...this.state.magazine.bullets};
-      //   for(let i=0; i<blts.length; i++){
-      //     //blts[i].animation.translate(1000).step({duration: 1}).translate(-1500, 0).step({duration: 8000});
-      //     blts[i].ani = blts[i].animation.export();
-      //   }
-      //   mags.bullets = blts;
-      //   this.setState({
-      //     magazine: mags
-      //   });
-      //   console.log("exported~~~~");
-      // }, 3000);
     doAction('home','loadBullets',{});
     this.setState({
       loadedBullets: that.props.home.loadedBullets
     })
 
     // this.doShoot();
-    doAction('home','doShoot', {});
-    doAction('home','doShoot', {});
-    doAction('home','doShoot', {});
-    console.log("))))++++++:   ", that.props.home.loadedBullets);
+    
+    let dSeed = 3000;
+    doAction('home','doShoot', {} );
+    // setTimeout(function(){doAction('home','doShoot', {} );}, 1*dSeed);
+    // setTimeout(function(){doAction('home','doShoot', {} );}, 2*dSeed);
+    // setTimeout(function(){doAction('home','doShoot', {} );}, 3*dSeed);
+    // setTimeout(function(){doAction('home','doShoot', {} );}, 4*dSeed);
+    // setTimeout(function(){doAction('home','doShoot', {} );}, 5*dSeed);
+    // setTimeout(function(){doAction('home','doShoot', {} );}, 6*dSeed);
+    // setTimeout(function(){doAction('home','doShoot', {} );}, 7*dSeed);
+    // setTimeout(function(){doAction('home','doShoot', {} );}, 8*dSeed);
+    // setTimeout(function(){doAction('home','doShoot', {} );}, 9*dSeed);
+    // doAction('home','doShoot', {});
+    // doAction('home','doShoot', {});
+
+    // doShoot(that.props.home.shooters, that.props.home.ballistics, doAction);
+    doShoot(that.props.home.shooters, that.props.home.loadedBullets, that.props.home.ballistics, doAction);
+    // doEject(that.props.home.ejecters, doAction);
+    // doShoot(that.props.home.ballistics, that.props.home.shooters, doAction);
+    doEject(that.props.home.ballistics, that.props.home.ejecters, doAction);
+    doClear(that.props.home.ballistics, doAction);
+
     // doAction('home','doShoot', {});
     // doAction('home','doShoot', {});
 
@@ -227,41 +122,41 @@ class Home extends Component {
     // })
     
     var that = this;
-    wx.getLocation({
-        type: 'wgs84',
-        success: function(res) {
-                    var latitude = res.latitude
-                    var longitude = res.longitude
-                    var speed = res.speed
-                    var accuracy = res.accuracy
-                  // console.log("getLocation success: ", res);   
-                },
-        complete: function(res){
-            // console.log("getLocation complete: ", res); 
-            var _latitude = res.latitude;
-            var _longitude = res.longitude;
-            qqmapsdk.reverseGeocoder({
-                location: {
-                            latitude: _latitude,
-                            longitude: _longitude
-                          },
-                success: function (res) {
-                    console.log("reverseGeocoder success: ", res);
-                    that.setState({
-                        hasLocation: true,
-                        location: formatLocation(_longitude, _latitude),
-                        locationAddress: res.result.address
-                    });
-                },
-                fail: function (res) {
-                    console.log("reverseGeocoder fail: ", res);
-                },
-                complete: function (res) {
-                    console.log("reverseGeocoder complete: ", res);
-                }
-            });
-        }
-    });
+    // wx.getLocation({
+    //     type: 'wgs84',
+    //     success: function(res) {
+    //                 var latitude = res.latitude
+    //                 var longitude = res.longitude
+    //                 var speed = res.speed
+    //                 var accuracy = res.accuracy
+    //               // console.log("getLocation success: ", res);   
+    //             },
+    //     complete: function(res){
+    //         // console.log("getLocation complete: ", res); 
+    //         var _latitude = res.latitude;
+    //         var _longitude = res.longitude;
+    //         qqmapsdk.reverseGeocoder({
+    //             location: {
+    //                         latitude: _latitude,
+    //                         longitude: _longitude
+    //                       },
+    //             success: function (res) {
+    //                 console.log("reverseGeocoder success: ", res);
+    //                 that.setState({
+    //                     hasLocation: true,
+    //                     location: formatLocation(_longitude, _latitude),
+    //                     locationAddress: res.result.address
+    //                 });
+    //             },
+    //             fail: function (res) {
+    //                 console.log("reverseGeocoder fail: ", res);
+    //             },
+    //             complete: function (res) {
+    //                 console.log("reverseGeocoder complete: ", res);
+    //             }
+    //         });
+    //     }
+    // });
 
     
     
@@ -319,6 +214,83 @@ class Home extends Component {
   }
 
 }
+//loadedBullets
+
+function doShoot(_theShooters, _loadedBullets, _ballistics, _doAction){
+  let _now = new Date().getTime(); 
+  if(_theShooters.length>1){
+    // let emptyBis = 0;
+    // for(let i=0; i<_ballistics.length; i++){
+    //   if(_ballistics[i].empty){
+    //     emptyBis++;
+    //   }
+    // }
+    // console.log("#####?????????????? emptyBis/_ballistics.lengt: ", emptyBis/_ballistics.length, emptyBis);
+    // if(emptyBis/_ballistics.length<0.7){
+    if(_loadedBullets.length<_ballistics.length*5){  
+      let shtr = _theShooters[0];
+      _doAction('home','doShoot', {shootBullet: shtr});
+    }
+    setTimeout(function(){doShoot(_theShooters, _loadedBullets, _ballistics, _doAction);}, !!_theShooters[1]?_theShooters[1].fire_delay:1000);
+  }else{
+    setTimeout(function(){doShoot(_theShooters, _loadedBullets, _ballistics, _doAction);}, 7000);
+  }
+}
+
+// function doEject(_theEjecters, _doAction){
+//   let _now = new Date().getTime(); 
+//   if(_theEjecters.length>0){
+//     let ejtr = _theEjecters[0];
+//     console.log("### doEject: ", ejtr);
+//     _doAction('home','doEject', {ejectBullet: ejtr});
+//     setTimeout(function(){doEject(_theEjecters, _doAction);}, 5000);
+//   }else{
+//     setTimeout(function(){doEject(_theEjecters, _doAction);}, 5000);
+//   }    
+// }
+
+  // function doShoot(_theBallistics, _theShooters, _doAction){
+  //   let _now = new Date().getTime(); 
+  //   var _empties = [];
+  //   for(var i=0; i<_theBallistics; i++){
+  //     if(_theBallistics[i].onTimes!=-1 && (_theBallistics[i].onTimes+_theBallistics[i].delay)<_now) {
+  //       _empties.push(_theBallistics[i]);
+  //     }
+  //   }
+  //   if(_empties.length>0 && _theShooters.length>0){
+  //     let shtr = _theShooters[0];
+  //     _doAction('home','doShoot', {shootBullet: shtr});
+  //     setTimeout(function(){doShoot(_theBallistics, _theShooters, _doAction);}, 500);
+  //   }else{
+  //     setTimeout(function(){doShoot(_theBallistics, _theShooters, _doAction);}, 500);
+  //   }
+  // }
+
+  function doEject(_theBallistics, _theEjecters, _doAction){
+    let _now = new Date().getTime(); 
+    var _fills = [];
+    for(var i=0; i<_theBallistics.length; i++){
+      if(_theBallistics[i].onTimes!=-1 && (_theBallistics[i].onTimes+_theBallistics[i].clearDelay)<_now) {
+        _fills.push(_theBallistics[i]);
+        break;
+      }
+    }
+    console.log("### doEject:!!!!!!!!!!!!!!!!!!!!!---", _fills.length, _theEjecters.length);
+    if(_fills.length>0 && _theEjecters.length>2){
+      let ejtr = _theEjecters[0];
+      // console.log("### doEject: ", ejtr);
+      _doAction('home','doEject', {ejectBullet: ejtr});
+      setTimeout(function(){doEject(_theBallistics, _theEjecters, _doAction);}, _theEjecters[1].eject_delay);
+    }else{
+      setTimeout(function(){doEject(_theBallistics, _theEjecters, _doAction);}, 700);
+    }    
+  }
+  
+  
+  function doClear(_theBallistics, _doAction){
+    _doAction('home','doClear', {});
+    setTimeout(function(){doClear(_theBallistics, _doAction);}, 500);
+  }
 
 function mapStateToProps({home}){
   return {

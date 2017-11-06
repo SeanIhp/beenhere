@@ -12,7 +12,7 @@
         <view style="margin-top:120px;">
              <!-- <list key="bulletList" name="bullet"/>  -->
 
-            <rich-text animation="{{state.loadedBullets[0].ani}}" class="bullet-text" style="top:{{state.loadedBullets[0].baslistic.top}}px;left:{{state.loadedBullets[0].clientWidth}}px;">
+            <!-- <rich-text animation="{{state.loadedBullets[0].ani}}" class="bullet-text" style="top:{{state.loadedBullets[0].baslistic.top}}px;left:{{state.loadedBullets[0].clientWidth}}px;">
               <span style="color:{{state.loadedBullets[0].color}};font-size:{{state.loadedBullets[0].size}}px">
                 {{state.loadedBullets[0].text}}
               </span>
@@ -27,13 +27,75 @@
                 {{state.loadedBullets[2].text}}
               </span>
             </rich-text>
-            <view wx:key="vv" wx:for="{{state.loadedBullets}}">
-              <rich-text animation="{{item.ani}}" class="bullet-text" style="top:{{item.baslistic.top}}px;left:{{item.clientWidth}}px;">
+            <rich-text animation="{{state.loadedBullets[3].ani}}" class="bullet-text" style="top:{{state.loadedBullets[3].baslistic.top}}px;left:{{state.loadedBullets[3].clientWidth}}px;">
+              <span style="color:{{state.loadedBullets[3].color}};font-size:{{state.loadedBullets[3].size}}px">
+                {{state.loadedBullets[3].text}}
+              </span>
+            </rich-text>
+            <rich-text animation="{{state.loadedBullets[4].ani}}" class="bullet-text" style="top:{{state.loadedBullets[4].baslistic.top}}px;left:{{state.loadedBullets[4].clientWidth}}px;">
+              <span style="color:{{state.loadedBullets[4].color}};font-size:{{state.loadedBullets[4].size}}px">
+                {{state.loadedBullets[4].text}}
+              </span>
+            </rich-text>
+            <rich-text animation="{{state.loadedBullets[5].ani}}" class="bullet-text" style="top:{{state.loadedBullets[5].baslistic.top}}px;left:{{state.loadedBullets[5].clientWidth}}px;">
+              <span style="color:{{state.loadedBullets[5].color}};font-size:{{state.loadedBullets[5].size}}px">
+                {{state.loadedBullets[5].text}}
+              </span>
+            </rich-text>
+            <rich-text animation="{{state.loadedBullets[6].ani}}" class="bullet-text" style="top:{{state.loadedBullets[6].baslistic.top}}px;left:{{state.loadedBullets[6].clientWidth}}px;">
+              <span style="color:{{state.loadedBullets[6].color}};font-size:{{state.loadedBullets[6].size}}px">
+                {{state.loadedBullets[6].text}}
+              </span>
+            </rich-text>
+            <rich-text animation="{{state.loadedBullets[7].ani}}" class="bullet-text" style="top:{{state.loadedBullets[7].baslistic.top}}px;left:{{state.loadedBullets[7].clientWidth}}px;">
+              <span style="color:{{state.loadedBullets[7].color}};font-size:{{state.loadedBullets[7].size}}px">
+                {{state.loadedBullets[7].text}}
+              </span>
+            </rich-text>
+            <rich-text animation="{{state.loadedBullets[8].ani}}" class="bullet-text" style="top:{{state.loadedBullets[7].baslistic.top}}px;left:{{state.loadedBullets[7].clientWidth}}px;">
+              <span style="color:{{state.loadedBullets[8].color}};font-size:{{state.loadedBullets[8].size}}px">
+                {{state.loadedBullets[8].text}}
+              </span>
+            </rich-text>
+            <rich-text animation="{{state.loadedBullets[9].ani}}" class="bullet-text" style="top:{{state.loadedBullets[7].baslistic.top}}px;left:{{state.loadedBullets[7].clientWidth}}px;">
+              <span style="color:{{state.loadedBullets[9].color}};font-size:{{state.loadedBullets[9].size}}px">
+                {{state.loadedBullets[9].text}}
+              </span>
+            </rich-text>
+            <rich-text animation="{{state.loadedBullets[10].ani}}" class="bullet-text" style="top:{{state.loadedBullets[7].baslistic.top}}px;left:{{state.loadedBullets[7].clientWidth}}px;">
+              <span style="color:{{state.loadedBullets[10].color}};font-size:{{state.loadedBullets[10].size}}px">
+                {{state.loadedBullets[10].text}}
+              </span>
+            </rich-text>
+            <rich-text animation="{{state.loadedBullets[11].ani}}" class="bullet-text" style="top:{{state.loadedBullets[7].baslistic.top}}px;left:{{state.loadedBullets[7].clientWidth}}px;">
+              <span style="color:{{state.loadedBullets[11].color}};font-size:{{state.loadedBullets[11].size}}px">
+                {{state.loadedBullets[11].text}}
+              </span>
+            </rich-text>
+            <rich-text animation="{{state.loadedBullets[12].ani}}" class="bullet-text" style="top:{{state.loadedBullets[7].baslistic.top}}px;left:{{state.loadedBullets[7].clientWidth}}px;">
+              <span style="color:{{state.loadedBullets[12].color}};font-size:{{state.loadedBullets[12].size}}px">
+                {{state.loadedBullets[12].text}}
+              </span>
+            </rich-text>
+            <rich-text animation="{{state.loadedBullets[13].ani}}" class="bullet-text" style="top:{{state.loadedBullets[7].baslistic.top}}px;left:{{state.loadedBullets[7].clientWidth}}px;">
+              <span style="color:{{state.loadedBullets[13].color}};font-size:{{state.loadedBullets[13].size}}px">
+                {{state.loadedBullets[13].text}}
+              </span>
+            </rich-text>
+            <rich-text animation="{{state.loadedBullets[14].ani}}" class="bullet-text" style="top:{{state.loadedBullets[7].baslistic.top}}px;left:{{state.loadedBullets[7].clientWidth}}px;">
+              <span style="color:{{state.loadedBullets[14].color}};font-size:{{state.loadedBullets[14].size}}px">
+                {{state.loadedBullets[14].text}}
+              </span>
+            </rich-text> -->
+
+
+             <view wx:key="vv" wx:for="{{state.loadedBullets}}">
+              <rich-text animation="{{item.ani}}" class="bullet-text" style="position: absolute;top:{{item.baslistic.top}}px;left:{{item.clientWidth}}px;">
                 <span style="color:{{item.color}};font-size:{{item.size}}px">
                   {{item.text}}
                 </span>
               </rich-text>
-            </view>
+            </view> 
 
 
             <!-- <rich-text animation="{{state.bullet0.ani}}" class="bullet-text" style="top:20px;left:{{state.clientWidth}}px;">

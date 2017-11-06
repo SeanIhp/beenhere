@@ -81,7 +81,7 @@ export default class {
         predicate: (getState, action) => action.type !== '@@DVA_LOADING/SHOW' && action.type !== '@@DVA_LOADING/HIDE',
         diff: true,
       }),
-      ...createLoading(),
+      // ...createLoading(),
       onError(error) {
         console.error(error.stack);
         //showToastMessage(error.message,true);

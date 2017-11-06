@@ -1,7 +1,7 @@
-"use strict";var exports=module.exports={};module.exports = function(exec){
+"use strict";var exports=module.exports={};module.exports = function (exec) {
   try {
     return !!exec();
-  } catch(e){
+  } catch (e) {
     return true;
   }
 };

@@ -2,19 +2,27 @@ import { getMerchantSummary,getEnterprise } from '../services/home';
 import wx from 'labrador';
 import { XBULLETS } from "../constants.js";
 
+const BULLET_COLORS = ["#FF0000", "#EEE4BB", "#C1E8C1", "#AECC33", "#8FD87D", "#82B2D2", "#CC88CC","#EE66B8", "#F4607E", "#6666EE", "#EE6666", "#E3CC72"];
+const BULLET_SIZES = [8, 10, 12, 12, 14, 14, 16, 16, 18, 18, 20];
+const BULLET_SPEEDS = [26500, 26000, 25500, 25000, 24500, 24000, 23500, 23000, 22500, 22000, 21500];
+
+const BULLET_COLOR_DEFAULT = "#FF0000";
+const BULLET_SIZE_DEFAULT = 14;
+const BULLET_SPEED_DEFAULT = 20000;
+
 class Bullet {
-    constructor(_bullet, _baslistic, _bulletsTotal){
+    constructor(_bullet, _baslistic, _bulletsTotal, _loadedBulletsTotal){
         let that = this;
         this.clientWidth = wx.getSystemInfoSync().windowWidth;
         this.bullet = _bullet;
         this.baslistic = _baslistic;
-        // this.onEject = this.props.onEject;
 
-        this._speedSeed = 1.5;
+        this._bulletsMax = 25;
+        this._speedSeed = 3;
         this._delaySeed = 2333;
-        this.bulletsTotal = _bulletsTotal;
 
-        this.text = this.bullet.text;
+        this.text = _bullet.text;
+        this.textLen = (this.text.match(/[^ -~]/g) == null ? this.text.length+1 : (this.text.length + this.text.match(/[^ -~]/g).length)+1)/2;
         this.color = null;
         this.size = null;
         this.direct = 0;
@@ -23,83 +31,30 @@ class Bullet {
         this.top = null;
         this.left = null;
         this.animation = wx.createAnimation();
-        switch((""+this.bullet.bore).length){
-            case 10:
-                this.color = "#E3CC72";
-                this.size = 20;
-                this.speed = 22000/this._speedSeed;
-                break;
-            case 9:
-                this.color = "#EE6666";
-                this.size = 18;
-                this.speed = 23000/this._speedSeed;
-                break;
-            case 8:
-                this.color = "#6666EE";
-                this.size = 18;
-                this.speed = 24000/this._speedSeed;
-                break;
-            case 7:
-                this.color = "#F4607E";
-                this.size = 16;
-                this.speed = 25000/this._speedSeed;
-                break;
-            case 6:
-                this.color = "#EE66B8";
-                this.size = 16;
-                this.speed = 26000/this._speedSeed;
-                break;
-            case 5:
-                this.color = "#CC88CC";
-                this.size = 14;
-                this.speed = 27000/this._speedSeed;
-                break;
-            case 4:
-                this.color = "#82B2D2";
-                this.size = 14;
-                this.speed = 28000/this._speedSeed;
-                break;
-            case 3:
-                this.color = "#8FD87D";
-                this.size = 12;
-                this.speed = 29000/this._speedSeed;
-                break;
-            case 2:
-                this.color = "#AECC33";
-                this.size = 12;
-                this.speed = 30000/this._speedSeed;
-                break;
-            case 1: 
-                this.color = "#C1E8C1";
-                this.size = 10;
-                this.speed = 30000/this._speedSeed;    //31000/this._speedSeed;
-                break;
-            case 0: 
-                this.color = "#EEE4BB";
-                this.size = 8;
-                this.speed = 32000/this._speedSeed;
-                break;
-            default:
-                this.color = "#FF0000";
-                this.size = 22;
-                this.speed = 21000/this._speedSeed;
+
+        let _boreLen = (""+this.bullet.bore).length;
+        if(_boreLen){
+          this.color = BULLET_COLORS[_boreLen];
+          this.size = BULLET_SIZE_DEFAULT;  //BULLET_SIZES[_boreLen];
+          this.speed = BULLET_SPEED_DEFAULT/this._speedSeed;  //BULLET_SPEEDS[_boreLen]; //22000/this._speedSeed;
+        }else{
+          this.color = BULLET_COLOR_DEFAULT;
+          this.size = BULLET_SIZE_DEFAULT;
+          this.speed = BULLET_SPEED_DEFAULT/this._speedSeed;
         }
 
-        this.left = wx.getSystemInfoSync().windowWidth;
-        this.direct = this.left + (!!this.text?this.text.length*(this.size+4):0);
-        this.delay = Math.round(Math.random()*this.bulletsTotal);
-        this.size = 14;
-        console.log("Bullet's ______: ", this.text);
-        console.log("Bullet's ______INIT_____left/delay/len/direct/speed: ", this.left, this.delay*this._delaySeed, this.text.length, this.direct, this.speed);
-        this.animation.translate(-1*Math.abs(this.direct)).step({duration: this.speed, delay: 0});
-        // this.animation.translate(Math.abs(this.direct), 0).step({duration: 1});
+        // if(_loadedBulletsTotal<(this._bulletsMax*0.8)){
+        //   this.speed = 100;
+        // }
+
+        // this.left = wx.getSystemInfoSync().windowWidth + (!!this.text?this.textLen*this.size:0);
+        this.left = 0;
+        this.direct = this.clientWidth + (!!this.text?this.textLen*this.size:0);
+        this.delay = Math.round(Math.random()*_bulletsTotal)*30;
+        this.animation.translate(-1*Math.abs(this.direct)).step({duration: this.speed, delay: this.delay});
+        this.animation.translate(Math.abs(this.direct), 0).step({duration: 1});
         this.ani = this.animation.export();
-        setTimeout(function() {
-          console.log("[3000]WHERE AM I: : : ", that.left, that.bullet.id);
-        }, 3000);
-        setTimeout(function() {
-          console.log("[5000]WHERE AM I: : : ", that.left, that.bullet.id);
-        }, 5000);
+        console.log("BULLET:　", this);
     }
 }
 
@@ -113,23 +68,24 @@ export default {
     bullets: [],
     loadedBullets: [],
     ballistics: [
-        {id:0, top: 20, delay:9999999, bulletId: null},
-        {id:1, top: 40, delay:9999999, bulletId: null},
-        {id:2, top: 60, delay:9999999, bulletId: null},
-        {id:3, top: 80, delay:9999999, bulletId: null},
-        {id:4, top: 100, delay:9999999, bulletId: null},
-        {id:5, top: 120, delay:9999999, bulletId: null},
-        {id:6, top: 140, delay:9999999, bulletId: null},
-        {id:7, top: 160, delay:9999999, bulletId: null},
-        {id:8, top: 180, delay:9999999, bulletId: null},
-        {id:9, top: 200, delay:9999999, bulletId: null},
-        {id:10, top: 220, delay:9999999, bulletId: null},
-        {id:11, top: 240, delay:9999999, bulletId: null},
-        {id:12, top: 260, delay:9999999, bulletId: null},
-        {id:13, top: 280, delay:9999999, bulletId: null},
-        {id:14, top: 300, delay:9999999, bulletId: null}
+        {id:0, top: 20, empty:true, clearDelay:9999999, onTimes:-1, bulletId: null},
+        // {id:1, top: 40, empty:true, clearDelay:9999999, onTimes:-1, bulletId: null},
+        // {id:2, top: 60, empty:true, clearDelay:9999999, onTimes:-1, bulletId: null},
+        // {id:3, top: 80, empty:true, clearDelay:9999999, onTimes:-1, bulletId: null},
+        // {id:4, top: 100, empty:true, clearDelay:9999999, onTimes:-1, bulletId: null},
+        // {id:5, top: 120, empty:true, clearDelay:9999999, onTimes:-1, bulletId: null},
+        // {id:6, top: 140, empty:true, clearDelay:9999999, onTimes:-1, bulletId: null},
+        // {id:7, top: 160, empty:true, clearDelay:9999999, onTimes:-1, bulletId: null},
+        // {id:8, top: 180, empty:true, clearDelay:9999999, onTimes:-1, bulletId: null},
+        // {id:9, top: 200, empty:true, clearDelay:9999999, onTimes:-1, bulletId: null},
+        // {id:10, top: 220, empty:true, clearDelay:9999999, onTimes:-1, bulletId: null},
+        // {id:11, top: 240, empty:true, clearDelay:9999999, onTimes:-1, bulletId: null},
+        // {id:12, top: 260, empty:true, clearDelay:9999999, onTimes:-1, bulletId: null},
+        // {id:13, top: 280, empty:true, clearDelay:9999999, onTimes:-1, bulletId: null},
+        // {id:14, top: 300, empty:true, clearDelay:9999999, onTimes:-1, bulletId: null}
       ],
-    shooter: [],
+    shooters: [],
+    ejecters: [],
     baseBore: 0,
     baseRange: 100
   },
@@ -150,88 +106,327 @@ export default {
           }
         })
     }, /* loadBullets end */
-    *doShoot({ payload }, { select, call, put }) {                
+    
+    *doShootxxx({ payload }, { select, call, put }) {  
+        let _blt = payload.shootBullet;       
+        console.log("************ SHOOT BUT: ", _blt);  
+        let _now = new Date().getTime(); 
         let __bullets = yield select(state => state.home.bullets);
         let __loadedBullets = yield select(state => state.home.loadedBullets);
         let __ballistics = yield select(state => state.home.ballistics);
-        let __shooter = yield select(state => state.home.shooter);
-        let bstIdxs = [];
-        //筛选空膛
-        for(let i=0; i<__ballistics.length; i++){
-          if(!__ballistics.filled){
-            bstIdxs.push(i);
-          }
-        }
+        let __shooters = yield select(state => state.home.shooters);
+        let __ejecters = yield select(state => state.home.ejecters);
+        
+        if(!!_blt){
+          for(var i=0; i<__ballistics.length; i++) {
+            if(__ballistics[i].onTimes!=-1 && (__ballistics[i].onTimes+__ballistics[i].clearDelay)<_now) {
+              __ballistics[i].empty = true;
+            }
+          };
+        }     
+
+        let _miduSeed = 5;
         //送弹出匣
+        // debugger;
         let blt = __bullets.shift();
-        let bstId = 0;
-        let theBallistic = null;
-        if(__ballistics[0].delay>999999){
-          //未曾发弹，随机选膛
-          theBallistic = __ballistics[Math.round(Math.random()*(__ballistics.length-1))];
-        }else{
-          //取冷膛
-          theBallistic = __ballistics[0];
+        if(!!blt){
+          let bstId = 0;
+          let theBallistic = null; 
+          let _bis = [];
+          for(var i=0; i<__ballistics.length; i++) {
+            if(__ballistics[i].clearDelay==9999999){
+              _bis.push(__ballistics[i]);
+            }
+          };
+          if(_bis.length>0){
+            //未曾发弹，随机选膛
+            theBallistic = _bis[Math.round(Math.random()*(_bis.length-1))];
+          }else{
+            //取冷膛
+            // theBallistic = __ballistics[0];
+            let _bis2 = [];
+            for(var j=0; j<__ballistics.length; j++) {
+              if(__ballistics[j].empty) {
+                _bis2.push(__ballistics[j]);
+              }
+            };
+            theBallistic = _bis2[Math.round(Math.random()*(_bis2.length-1))];
+          }
+          console.log("{{{theBallistic}}}____ %%%%%%%%%%%%%%%%%%%%%%%%: ", theBallistic.id);
+          //装弹
+          // console.log("{{{theBallistic}}}____ %%%%%%%%%%%%%%%%%%%%%%%%: ");
+          // console.log(theBallistic);
+          let theBullet = new Bullet(blt, theBallistic, __bullets.length, __loadedBullets.length);
+          // theBullet.speed = 30000;
+          theBallistic.bulletId = blt.id;
+          theBallistic.clearDelay = theBullet.speed/_miduSeed; //theBullet.delay;
+          theBallistic.onTimes = _now;
+          theBallistic.empty = false;
+          theBullet.bullet.ballistic = theBallistic;
+          //快慢机就位
+          __shooters.push({bstId:theBallistic.id, bltId:blt.id, fire_delay:theBullet.speed/_miduSeed});
+          __shooters.sort(function(a,b){
+            return a.fire_delay - b.fire_delay;
+          });
+          __ejecters.push({blt:blt, eject_delay:theBullet.speed});
+          __ejecters.sort(function(a,b){
+            return a.eject_delay - b.eject_delay;
+          });
+          //推弹入膛
+          __loadedBullets.push(theBullet);
+          // console.log("{++++}  现有: ", __loadedBullets.length);
+          // console.log("【++++】  现有: ", __bullets.length);
+          yield put({
+            type: "doShootSuccess",
+            payload: {
+              bullets: __bullets,
+              loadedBullets: __loadedBullets,
+              ballistics: __ballistics,
+              shooters: __shooters
+            }
+          });
         }
-        //let bst = __ballistics[bstIdx];
-        //推弹入膛
-        let theBullet = new Bullet(blt, theBallistic, __bullets.length);
-        theBallistic.bulletId = theBullet.bullet.id;
-        theBullet.bullet.ballistic = theBallistic;
-        __loadedBullets.push(theBullet);
-        //快慢机就位
-        __shooter.push({bstId:theBallistic.id, bltId:theBullet.bullet.id, fire_delay:theBullet.speed/3, eject_delay:theBullet.speed});
-        __shooter.sort(function(a,b){
-          return a.eject_delay - b.eject_delay;
-        });
-        console.log("[[[[[[[[[[[[]]   ", __loadedBullets);
+    }, /* doShoot end */
+    
+        
+        
+    *doClear({ payload }, { select, call, put }) {  
+          console.log("************ CLEARING BALLISTICS~!~~!!! ");  
+          let _now = new Date().getTime(); 
+          let __bullets = yield select(state => state.home.bullets);
+          let __loadedBullets = yield select(state => state.home.loadedBullets);
+          let __ballistics = yield select(state => state.home.ballistics);
+          let __shooters = yield select(state => state.home.shooters);
+          
+          for(var i=0; i<__ballistics.length; i++) {
+            if(__ballistics[i].onTimes!=-1 && (__ballistics[i].onTimes+__ballistics[i].clearDelay)<_now) {
+              __ballistics[i].empty = true;
+            }else{
+              __ballistics[i].empty = false;
+            }
+          };  
+          yield put({
+            type: "doShootSuccess",
+            payload: {
+              // bullets: __bullets,
+              loadedBullets: __loadedBullets,
+              // ballistics: __ballistics,
+              // shooters: __shooters
+            }
+          });
+    },
+    
+    
+    *doShoot({ payload }, { select, call, put }) {  
+      console.log("************ SHOOT BUT: ");  
+      let _miduSeed = 2;
+      let _now = new Date().getTime(); 
+      let __bullets = yield select(state => state.home.bullets);
+      let __loadedBullets = yield select(state => state.home.loadedBullets);
+      let __ballistics = yield select(state => state.home.ballistics);
+      let __shooters = yield select(state => state.home.shooters);
+      let __ejecters = yield select(state => state.home.ejecters);
+      
+      // var emptyBis = 0;
+      // for(var i=0; i<__ballistics.length; i++) {
+      //   if(!__ballistics[i].empty && __ballistics[i].onTimes!=-1 && (__ballistics[i].onTimes+__ballistics[i].clearDelay)<_now) {
+      //     __ballistics[i].empty = true;
+      //   }
+        // if(__ballistics[i].empty){
+        //   emptyBis++;
+        // }
+      // }; 
+      // if(emptyBis/__ballistics.length>6){
+      //   return;
+      // }
+      let theBallistic = null; 
+      let _bis = [];
+      for(var i=0; i<__ballistics.length; i++) {
+        if(__ballistics[i].clearDelay==9999999){
+          _bis.push(__ballistics[i]);
+        }
+      };
+      if(_bis.length>0){
+        //未曾发弹，随机选膛
+        theBallistic = _bis[Math.round(Math.random()*(_bis.length-1))];
+      }else{
+        //取冷膛
+        let _bis2 = [];
+        for(var j=0; j<__ballistics.length; j++) {
+          if(__ballistics[j].empty) {
+            _bis2.push(__ballistics[j]);
+          }
+        };
+        theBallistic = _bis2[Math.round(Math.random()*(_bis2.length))];
+        // if(_bis2.length>0){
+        //   _bis2.sort(function(a,b){
+        //     return b.clearDelay - a.clearDelay;
+        //   });
+        //   theBallistic = _bis2[0];
+        // }
+      }
+      if(!!theBallistic){
+        //取弹装药
+        let blt = __bullets.shift();
+        if(!!blt){
+            let theBullet = new Bullet(blt, theBallistic, __bullets.length, __loadedBullets.length);
+            theBallistic.bulletId = blt.id;
+            theBallistic.clearDelay = theBullet.speed + theBullet.delay + theBullet.speed/_miduSeed; //theBullet.delay;
+            theBallistic.onTimes = _now;
+            theBallistic.empty = false;
+            theBullet.bullet.ballistic = theBallistic;
+            //快慢机就位
+            __shooters.push({bstId:theBallistic.id, bltId:blt.id, fire_delay:theBallistic.clearDelay+200});
+            __shooters.sort(function(a,b){
+              return a.fire_delay - b.fire_delay;
+            });
+            __ejecters.push({blt:blt, eject_delay:theBullet.speed + theBullet.delay + 100});
+            __ejecters.sort(function(a,b){
+              return a.eject_delay - b.eject_delay;
+            });
+            //推弹入膛
+            __loadedBullets.push(theBullet);
+            // console.log("{++++}  现有: ", __loadedBullets.length);
+            // console.log("【++++】  现有: ", __bullets.length);
+            yield put({
+              type: "doShootSuccess",
+              payload: {
+                bullets: __bullets,
+                loadedBullets: __loadedBullets,
+                ballistics: __ballistics,
+                shooters: __shooters
+              }
+            });
+        }
+      }else{
         yield put({
           type: "doShootSuccess",
           payload: {
-            bullets: __bullets,
-            loadedBullets: __loadedBullets,
+            // bullets: __bullets,
+            // loadedBullets: __loadedBullets,
             ballistics: __ballistics,
-            shooter: __shooter
+            // shooters: __shooters
           }
-        })
+        });
+      }
+
+
+
+
+      
+
+      // let _miduSeed = 5;
+      // //送弹出匣
+      // // debugger;
+      // let blt = __bullets.shift();
+      // if(!!blt){
+      //   let bstId = 0;
+      //   let theBallistic = null; 
+      //   let _bis = [];
+      //   for(var i=0; i<__ballistics.length; i++) {
+      //     if(__ballistics[i].delay==9999999){
+      //       _bis.push(__ballistics[i]);
+      //     }
+      //   };
+      //   if(_bis.length>0){
+      //     //未曾发弹，随机选膛
+      //     theBallistic = _bis[Math.round(Math.random()*(_bis.length-1))];
+      //   }else{
+      //     //取冷膛
+      //     // theBallistic = __ballistics[0];
+      //     let _bis2 = [];
+      //     for(var j=0; j<__ballistics.length; j++) {
+      //       if(__ballistics[j].empty) {
+      //         _bis2.push(__ballistics[j]);
+      //       }
+      //     };
+      //     theBallistic = _bis2[Math.round(Math.random()*(_bis2.length-1))];
+      //   }
+      //   console.log("{{{theBallistic}}}____ %%%%%%%%%%%%%%%%%%%%%%%%: ", theBallistic.id);
+      //   //装弹
+      //   // console.log("{{{theBallistic}}}____ %%%%%%%%%%%%%%%%%%%%%%%%: ");
+      //   // console.log(theBallistic);
+      //   let theBullet = new Bullet(blt, theBallistic, __bullets.length, __loadedBullets.length);
+      //   // theBullet.speed = 30000;
+      //   theBallistic.bulletId = blt.id;
+      //   theBallistic.delay = theBullet.speed/_miduSeed; //theBullet.delay;
+      //   theBallistic.onTimes = _now;
+      //   theBallistic.empty = false;
+      //   theBullet.bullet.ballistic = theBallistic;
+      //   //快慢机就位
+      //   __shooters.push({bstId:theBallistic.id, bltId:blt.id, fire_delay:theBullet.speed/_miduSeed});
+      //   __shooters.sort(function(a,b){
+      //     return a.fire_delay - b.fire_delay;
+      //   });
+      //   __ejecters.push({blt:blt, eject_delay:theBullet.speed});
+      //   __ejecters.sort(function(a,b){
+      //     return a.eject_delay - b.eject_delay;
+      //   });
+      //   //推弹入膛
+      //   __loadedBullets.push(theBullet);
+      //   // console.log("{++++}  现有: ", __loadedBullets.length);
+      //   // console.log("【++++】  现有: ", __bullets.length);
+      //   yield put({
+      //     type: "doShootSuccess",
+      //     payload: {
+      //       bullets: __bullets,
+      //       loadedBullets: __loadedBullets,
+      //       ballistics: __ballistics,
+      //       shooters: __shooters
+      //     }
+      //   });
+      // }
     }, /* doShoot end */
+    
     *doEject({ payload }, { select, call, put }) {  
-        console.log("_____do eject");
-        let _blt = payload.bullet;
+        let _blt = payload.ejectBullet;
         let __bullets = yield select(state => state.home.bullets);
         let __loadedBullets = yield select(state => state.home.loadedBullets);
-        let __ballistics = yield select(state => state.home.ballistics);
-        let __shooter = yield select(state => state.home.shooter);
-        __bullets.push(_blt);
-        let blt = null;
-        // for(let i=0; i<__shooter.length; i++){
-        //   if(__shooter[i].bstId == _blt.ballistic.id && __shooter[i].bltId == _blt.id){
-        //     blt = __loadedBullets[i];
-        //     __loadedBullets.splice(i, 1);
-        //     break;
-        //   }
-        // }
-        for(let i=0; i<__loadedBullets.length; i++){
-          if(__loadedBullets[i].id == _blt.id){
-            blt = __loadedBullets[i];
-            __loadedBullets.splice(i, 1);
+        let __shooters = yield select(state => state.home.shooters);
+        let __ejecters = yield select(state => state.home.ejecters);
+        
+        
+        console.log("【--------------------】 EJECT BUT: ", _blt);
+        // console.log("++++++++++++++ EJECT BUT_ID: ", _blt.blt.id);        
+        // console.log("【B4】EJECTS : ", __ejecters.length);
+        for(var a=0; a<__ejecters.length; a++){
+          if(__ejecters[a].blt.id==_blt.blt.id){
+            __ejecters.splice(a, 1);
             break;
           }
         }
-        for(let i=0; i<__ballistics.length; i++){
-          if(!!__ballistics[i].bulletId && (__ballistics[i].bulletId == blt.id)) {
-            __ballistics[i].bulletId = null;
+        // console.log("【--】EJECTS : ", __ejecters.length);        
+        // console.log("【B4】SHOOTS : ", __shooters.length);
+        for(var b=0; b<__shooters.length; b++){
+          if(__shooters[b].bltId==_blt.blt.id){
+            __shooters.splice(b, 1);
             break;
           }
         }
+        // console.log("【--】SHOOTS : ", __shooters.length);
+        // console.log("【B4】LOADED : ", __loadedBullets.length);
+        for(var c=0; c<__loadedBullets.length; c++){
+          if(__loadedBullets[c].bullet.id==_blt.blt.id){
+            __loadedBullets.splice(c, 1);
+            break;
+          }
+        }
+        // console.log("【--】LOADED : ", __loadedBullets.length);
+        // console.log("【B4】ALL : ", __bullets.length);
+        delete _blt.blt.ballistic;
+        __bullets.push(_blt.blt);
+        // console.log("【--】ALL : ", __bullets.length);
+        // console.log("{----}  尚有: ", __loadedBullets.length);
+        // console.log("【----】  尚有: ", __bullets.length);
         yield put({
           type: "doEjectSuccess",
           payload: {
             bullets: __bullets,
             loadedBullets: __loadedBullets,
-            ballistics: __ballistics
+            shooters: __shooters,
+            ejecters: __ejecters
           }
-        })
+        });
     }, /* doEject end */
 
   }, /*effects end*/
@@ -253,11 +448,11 @@ export default {
       let data = {
         entnames: ["请选择企业","中国","美国","巴西","日本"],
         entappid: ["","gh_aaaa","gh_bbbb","gh_bbbb","gh_bbbb"]
-      }
+      };
       return { ...state, ...data };
     },
     setLogoutStatus(state,action) {
-      return { ...state, logout: action.payload }
+      return { ...state, logout: action.payload };
     },   
   },
 }
