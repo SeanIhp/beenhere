@@ -5,7 +5,7 @@
     <view class="page-section page-section-spacing swiper">
         <view class="locationInfo">
           <image class="locationIcon" src="../../assets/images/location.png"></image>
-          <text class="locationText">{{state.locationAddress}}附近</text>
+          <text class="locationText">我在{{state.locationAddress}}附近</text>
         </view>
 
       <block wx:if="{{true}}">
